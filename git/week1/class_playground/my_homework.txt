@@ -3,5 +3,3 @@ Some text for this file
 More text for this file
 
 And a bit more
-
-LoremIpsum LoremIpsum LoremIpsum LoremIpsum LoremIpsum
