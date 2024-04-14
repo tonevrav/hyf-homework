@@ -2,3 +2,9 @@ palevioletblack
 palevioletred
 palevioletgold
 palevioletgreen
+
+green
+yellow
+red
+blue
+aqua
