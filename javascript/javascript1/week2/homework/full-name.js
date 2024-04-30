@@ -4,7 +4,7 @@ function getFullName(firstName, surname, useFormalName, gender) {
         return "Please, provide both names to get a full name.";
     }
     
-    let fullName = `${firstName} ${surname}`;
+    const fullName = `${firstName} ${surname}`;
 
     if(useFormalName === true) {
         if(gender === "male") {
