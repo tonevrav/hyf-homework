@@ -2,17 +2,19 @@ const boughtCandyPrices = [];
 const amountToSpend = Math.random() * 100;
 
 function addCandy(candyType, weight) {
+    candyType = candyType.toLowerCase();
+
     switch(candyType) {
-        case "Sweet":
+        case "sweet":
             boughtCandyPrices.push(0.5 * weight);
         break;
-        case "Chocolate":
+        case "chocolate":
             boughtCandyPrices.push(0.7 * weight);
         break;
-        case "Toffee":
+        case "toffee":
             boughtCandyPrices.push(1.1 * weight);
         break;
-        case "Chewing-gum":
+        case "chewing-gum":
             boughtCandyPrices.push(0.03 * weight);
         break;
         default:
@@ -30,18 +32,8 @@ function canBuyMoreCandy() {
     if(total > amountToSpend) {
         console.log("Enough candy for you!");
         return false;
-    } else {
-        console.log("You can buy more, so please do!");
-        return true;
     }
+    
+    console.log("You can buy more, so please do!");
+    return true;
 }
-
-addCandy("Sweet", 2);
-addCandy("Chocolate", 50);
-addCandy("Chewing-gum", 1000);
-// addCandy("Chewing-gum", 1000);
-// addCandy("Chewing-gum", 1000);
-// addCandy("Chewing-gum", 1000);
-
-console.log(canBuyMoreCandy());
-console.log(boughtCandyPrices);
