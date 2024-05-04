@@ -6,7 +6,7 @@ function getFullName(firstName, surname, useFormalName, gender) {
     
     const fullName = `${firstName} ${surname}`;
 
-    if(useFormalName === true) {
+    if(useFormalName) {
         if(gender === "male") {
             return `Lord ${fullName}`;
         } else if (gender === "female") {
@@ -19,11 +19,5 @@ function getFullName(firstName, surname, useFormalName, gender) {
     return fullName;
 }
 
-const fullName1 = getFullName("Peter", "Garryson", false, "male");
-const fullName2 = getFullName("Vasylisa", "Kugut", true, "female");
-
-const fullName3 = getFullName("Rashid", "Ajami");
-const fullName4 = getFullName("Ahmed", " ");
-
-console.log(fullName3);
-console.log(fullName4);
+const fullName1 = getFullName("Rashid", "Ajami", true, "male");
+const fullName2 = getFullName("Ahmed", "   ");
