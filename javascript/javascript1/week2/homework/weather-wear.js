@@ -9,11 +9,11 @@ function whatToPutOn(temperature) {
         return "Light jacket";
     } else if(temperature < 25) {
         return "Shirt and shorts";
-    } else if(temperature >= 25) {
-        return "Sunglases";
+    } else if(temperature < 100) {
+        return "Sunglasses";        
     } else{
         return "Ooops...";
     }
 }
 
-console.log(whatToPutOn(-2));
+whatToPutOn(-21);
