@@ -31,19 +31,18 @@ const genresOfMusicDurations = [
   
   function logOutMusicText(genres) {
     // write code here
-    let output = ``;
+    let output = "";
     
     const lifespan = 80;
     const lifespanInHours = 365 * lifespan * 24; // 700800 h
     let total = 0;
 
-    for(let genre of genres) {
+    for(const genre of genres) {
       const totalHoursOfListening = genre["days"] * 24 + genre["hours"] + genre["minutes"] / 60;
       const percentage = (totalHoursOfListening / lifespanInHours) * 100;
       total += percentage;
 
-      let formattedPercentage;
-      percentage < 0.100 ? formattedPercentage = percentage.toFixed(3) : formattedPercentage = percentage.toFixed(2);
+      const formattedPercentage = percentage < 0.100 ? percentage.toFixed(3) : percentage.toFixed(2);
 
       output += `${genre["title"]} took ${formattedPercentage}% of my life ${"\n"}`;
     }
