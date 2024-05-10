@@ -12,7 +12,7 @@ function getNote(id) {
             return note;
         }
     }
-    return "Something went wrong!";
+    return `There is no item with id ${id}. Please, make sure you use a correct id`;
 }
 
 function logOutNotesFormatted() {
