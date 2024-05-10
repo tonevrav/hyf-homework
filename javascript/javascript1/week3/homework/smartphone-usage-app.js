@@ -20,7 +20,7 @@ function showStatus(){
 
     let totalDuration = 0;
 
-    for(let activity of activities) {
+    for(const activity of activities) {
         totalDuration += activity["duration"];
     }
 
