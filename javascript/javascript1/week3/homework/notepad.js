@@ -25,6 +25,7 @@ function removeNote(id) {
     for(let i = 0; i < notes.length; i++) {
         if(notes[i]["id"] === id && typeof notes[i]["id"] === "number") {
             notes.splice(i, 1);
+            // Change the identifier of each following element by decreasing it by 1
             for (let j = i; j < notes.length; j++) {
                 notes[j]["id"] -= 1;
             }
