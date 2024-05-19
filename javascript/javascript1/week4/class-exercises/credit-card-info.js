@@ -2,7 +2,7 @@
 
 function getCardInfo(cardNumber) {
 
-    let type = "Please provide a correct card number";
+    let messageToPrint = "Please provide a correct card number";
 
     cardNumber = cardNumber.toString();
 
@@ -10,20 +10,20 @@ function getCardInfo(cardNumber) {
         switch(cardNumber[0]) {
             case '2':
             case '5':
-                type = "Mastercard";
+                messageToPrint = "Mastercard";
                 break;
             case '3':
-                type = "American Express";
+                messageToPrint = "American Express";
                 break;
             case '4':
-                type = "Visa";
+                messageToPrint = "Visa";
                 break;
             default:
-                type = "Ensure the card number has been typed correctly";
+                messageToPrint = "Ensure the card number has been typed correctly";
         }
     }
 
-    return type;
+    return messageToPrint;
 }
 
 // RENDER
