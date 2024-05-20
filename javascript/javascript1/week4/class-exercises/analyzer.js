@@ -49,10 +49,12 @@ const positiveWordsList = [
 
 function getArrayOfOverlappingWords(sentenceAsArray, wordsList) {
   const words = [];
-
+  
   for(let i = 0; i < sentenceAsArray.length; i++) {
-    if(wordsList.includes(sentenceAsArray[i])) {
-      words.push(sentenceAsArray[i]);
+    const clearWord = sentenceAsArray[i].replace(/[?!., ]/g, '');
+    
+    if(wordsList.includes(clearWord)) {
+      words.push(clearWord);
     }
   }
 
@@ -74,7 +76,8 @@ function getScore(sentence, arrayOfPositiveWords, arrayOfNegativeWords) {
 
 // RENDER
 
-const score = getScore("Today is beautiful and fantastic weather!", positiveWordsList, negativeWordsList);
+// const score = getScore("Today is beautiful and fantastic weather!", positiveWordsList, negativeWordsList);
+const score = getScore("Today is beautiful, fantastic weather but I hope it doesn't become bad!", positiveWordsList, negativeWordsList);
 console.log(score);
 
 // Example of result:
