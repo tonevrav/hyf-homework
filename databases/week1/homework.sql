@@ -8,11 +8,14 @@ WHERE due_date IS NULL
 
 -- 3. Find all the tasks that are marked as done
 SELECT * FROM task
-WHERE status_id = 3
+JOIN status
+ON name = "done"
 
 -- 4. Find all the tasks that are not marked as done
+
 SELECT * FROM task
-WHERE status_id != 3
+JOIN status
+ON name != "done"
 
 -- 5. Get all the tasks, sorted with the most recently created first
 SELECT *
@@ -38,12 +41,12 @@ JOIN status ON task.status_id = status.id;
 -- 9. Get the name of each status, along with a count of how many tasks have that status
 SELECT name, COUNT(task.id) AS task_count
 FROM status
-LEFT JOIN task ON task.status_id = status.id
+JOIN task ON task.status_id = status.id
 GROUP BY name;
 
 -- 10. Get the names of all statuses, sorted by the status with most tasks first
 SELECT name, COUNT(task.id) AS task_count
 FROM status
-LEFT JOIN task ON task.status_id = status.id
+JOIN task ON task.status_id = status.id
 GROUP BY name
 ORDER BY task_count DESC;
